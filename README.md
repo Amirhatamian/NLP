@@ -1,6 +1,6 @@
 # NLP
-1.Geographic_Text_Classification
-# Geographic Text Classification
+1.Geographic_non_GeographicText_Classification
+# Geographic_non_GeographicText_Classification
 
 ## Project Description
 This project aims to classify text documents into two categories: geographic and non-geographic. The solution involves extracting text from various sources (including PDFs), preprocessing the text using natural language processing techniques, and then using a simple Naive Bayes classifier to make the classification.
@@ -23,8 +23,8 @@ This project aims to classify text documents into two categories: geographic and
 ## Setup Instructions
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/Geographic_Text_Classification.git
-    cd Geographic_Text_Classification
+    git clone https://github.com/yourusername/The Classification of Texts using Wikipedia.ipynb.git
+    cd The Classification of Texts using Wikipedia.ipynb
     ```
 2. Install the dependencies:
     ```bash
@@ -33,7 +33,7 @@ This project aims to classify text documents into two categories: geographic and
 
 3. Run the Jupyter notebook:
     ```bash
-    jupyter notebook notebooks/Geographic_Text_Classification.ipynb
+    jupyter notebook notebooks/The Classification of Texts using Wikipedia.ipynb.ipynb
     ```
 
 ## How to Run the Project
