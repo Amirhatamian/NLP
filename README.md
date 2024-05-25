@@ -23,7 +23,7 @@ This project aims to classify text documents into two categories: geographic and
 ## Setup Instructions
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/The Classification of Texts using Wikipedia.ipynb.git
+    git clone https://github.com/Amirhatamian/The Classification of Texts using Wikipedia.ipynb.git
     cd The Classification of Texts using Wikipedia.ipynb
     ```
 2. Install the dependencies:
