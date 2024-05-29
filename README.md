@@ -69,10 +69,15 @@ Summarize the slice without specifying a target size.
 Repeat slicing and summarizing until the end of the document.
 
 Collate the summaries.
+
 Repeat the process until the summary is within the context window.
+
 Save the document.
+
 Repeat summarization for the second document.
+
 Generate the final query.
+
 ## Implementation Details
 Length Measurement: Determine the lengths of the documents.
 Target Length Calculation: Compute target lengths based on document proportions.
