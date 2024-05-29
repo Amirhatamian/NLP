@@ -57,11 +57,17 @@ Python (using NLTK) or Java (using OpenNLP): Programming languages and respectiv
 LLM: Large Language Model for handling the context window and summarization tasks.
 
 ## Summarization Pipeline
+
 Measure the length of the two documents.
+
 Compute target lengths proportional to the lengths of the documents.
+
 Slice the second document within the context window.
+
 Summarize the slice without specifying a target size.
+
 Repeat slicing and summarizing until the end of the document.
+
 Collate the summaries.
 Repeat the process until the summary is within the context window.
 Save the document.
