@@ -3,7 +3,7 @@
 ### Project Overview
 The goal of this project is to classify text documents into two categories: geographic and non-geographic. The workflow involves text extraction, preprocessing, feature extraction, model training, and prediction.
 
-## Technologies and Tools
+### Technologies and Tools
 
 Python: Programming language used for implementation.
 NLTK: Natural Language Toolkit, used for text processing.
@@ -35,7 +35,7 @@ bash
 Copy code
 ## jupyter notebook notebooks/The-Classification-of-Texts-using-Wikipedia.ipynb.ipynb
 
-## Solution Steps
+### Solution Steps
 
 Text Extraction: Extract text from Wikipedia articles and PDF documents using PyPDF2.
 Preprocessing: Clean and preprocess text (tokenization, stopword removal, stemming/lemmatization) using NLTK.
@@ -43,7 +43,7 @@ Feature Extraction: Convert text into numerical features using CountVectorizer.
 Model Training: Train a Naive Bayes classifier on the preprocessed text data using scikit-learn.
 Prediction: Classify new text documents using the trained model.
 
-## Example Usage
+### Example Usage
 Open the Jupyter notebook.
 Run the cells to preprocess the text, train the classifier, and classify new documents.
 
@@ -78,7 +78,7 @@ Repeat summarization for the second document.
 
 Generate the final query.
 
-## Implementation Details
+### Implementation Details
 Length Measurement: Determine the lengths of the documents.
 
 Target Length Calculation: Compute target lengths based on document proportions.
@@ -91,7 +91,7 @@ Summary Collation: Combine all summaries into a cohesive document.
 
 Query Generation: Create the final summarized document.
 
-## Example Usage
+### Example Usage
 Implement the summarization algorithm in Python or Java.
 Run the algorithm with the provided input texts.
 Generate the summarized output following the style of the input text.
