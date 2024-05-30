@@ -47,7 +47,7 @@ Prediction: Classify new text documents using the trained model.
 Open the Jupyter notebook.
 Run the cells to preprocess the text, train the classifier, and classify new documents.
 
-## Large Language Model (LLM) Summarization
+### Large Language Model (LLM) Summarization
 ## Project Overview
 This project involves implementing an algorithm to generate a summarization of an input text that follows the style of another text. The algorithm handles long texts by summarizing them hierarchically.
 
@@ -79,17 +79,17 @@ Repeat summarization for the second document.
 Generate the final query.
 
 ## Implementation Details
-# Length Measurement: Determine the lengths of the documents.
+## Length Measurement: Determine the lengths of the documents.
 
-# Target Length Calculation: Compute target lengths based on document proportions.
+## Target Length Calculation: Compute target lengths based on document proportions.
 
-# Document Slicing: Slice the second document to fit within the context window.
+## Document Slicing: Slice the second document to fit within the context window.
 
-# Hierarchical Summarization: Summarize each slice and collate the results.
+## Hierarchical Summarization: Summarize each slice and collate the results.
 
-# Summary Collation: Combine all summaries into a cohesive document.
+## Summary Collation: Combine all summaries into a cohesive document.
 
-# Query Generation: Create the final summarized document.
+## Query Generation: Create the final summarized document.
 
 ## Example Usage
 Implement the summarization algorithm in Python or Java.
