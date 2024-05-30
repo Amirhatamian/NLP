@@ -79,12 +79,17 @@ Repeat summarization for the second document.
 Generate the final query.
 
 ## Implementation Details
-Length Measurement: Determine the lengths of the documents.
-Target Length Calculation: Compute target lengths based on document proportions.
-Document Slicing: Slice the second document to fit within the context window.
-Hierarchical Summarization: Summarize each slice and collate the results.
-Summary Collation: Combine all summaries into a cohesive document.
-Query Generation: Create the final summarized document.
+# Length Measurement: Determine the lengths of the documents.
+
+# Target Length Calculation: Compute target lengths based on document proportions.
+
+# Document Slicing: Slice the second document to fit within the context window.
+
+# Hierarchical Summarization: Summarize each slice and collate the results.
+
+# Summary Collation: Combine all summaries into a cohesive document.
+
+# Query Generation: Create the final summarized document.
 
 ## Example Usage
 Implement the summarization algorithm in Python or Java.
