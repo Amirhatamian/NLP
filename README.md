@@ -1,6 +1,6 @@
 # NLP
 ## Geographic vs. Non-Geographic Text Classification
-## Project Overview
+### Project Overview
 The goal of this project is to classify text documents into two categories: geographic and non-geographic. The workflow involves text extraction, preprocessing, feature extraction, model training, and prediction.
 
 ## Technologies and Tools
@@ -11,7 +11,7 @@ scikit-learn: Machine learning library used for model training and evaluation.
 PyPDF2: Library used for extracting text from PDF documents.
 Google Colab: Optional platform for running the Jupyter notebook.
 
-## Project Structure
+### Project Structure
 
 notebooks/Geographic_Text_Classification.ipynb: Main Jupyter notebook containing code, explanations, and results.
 data/: Directory for storing sample data files.
@@ -47,16 +47,16 @@ Prediction: Classify new text documents using the trained model.
 Open the Jupyter notebook.
 Run the cells to preprocess the text, train the classifier, and classify new documents.
 
-### Large Language Model (LLM) Summarization
-## Project Overview
+# Large Language Model (LLM) Summarization
+### Project Overview
 This project involves implementing an algorithm to generate a summarization of an input text that follows the style of another text. The algorithm handles long texts by summarizing them hierarchically.
 
-## Technologies and Tools
+### Technologies and Tools
 
 Python (using NLTK) or Java (using OpenNLP): Programming languages and respective libraries used for implementation.
 LLM: Large Language Model for handling the context window and summarization tasks.
 
-## Summarization Pipeline
+### Summarization Pipeline
 
 Measure the length of the two documents.
 
@@ -79,17 +79,17 @@ Repeat summarization for the second document.
 Generate the final query.
 
 ## Implementation Details
-## Length Measurement: Determine the lengths of the documents.
+Length Measurement: Determine the lengths of the documents.
 
-## Target Length Calculation: Compute target lengths based on document proportions.
+Target Length Calculation: Compute target lengths based on document proportions.
 
-## Document Slicing: Slice the second document to fit within the context window.
+Document Slicing: Slice the second document to fit within the context window.
 
-## Hierarchical Summarization: Summarize each slice and collate the results.
+Hierarchical Summarization: Summarize each slice and collate the results.
 
-## Summary Collation: Combine all summaries into a cohesive document.
+Summary Collation: Combine all summaries into a cohesive document.
 
-## Query Generation: Create the final summarized document.
+Query Generation: Create the final summarized document.
 
 ## Example Usage
 Implement the summarization algorithm in Python or Java.
