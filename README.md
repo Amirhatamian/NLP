@@ -1,97 +1,42 @@
-# NLP
-## Geographic vs. Non-Geographic Text Classification
-### Project Overview
-The goal of this project is to classify text documents into two categories: geographic and non-geographic. The workflow involves text extraction, preprocessing, feature extraction, model training, and prediction.
+# NLP: Text Classification and Summarisation with Wikipedia
 
-### Technologies and Tools
+Two small natural language processing projects built on text taken from Wikipedia.
 
-Python: Programming language used for implementation.
-NLTK: Natural Language Toolkit, used for text processing.
-scikit-learn: Machine learning library used for model training and evaluation.
-PyPDF2: Library used for extracting text from PDF documents.
-Google Colab: Optional platform for running the Jupyter notebook.
+## 1. Geographic vs non-geographic text — `The_Classification_of_Texts_using_Wikipedia.ipynb`
 
-### Project Structure
+**Goal:** decide whether a document is about a place (geographic) or not, and use the model to classify text extracted from a PDF.
 
-notebooks/Geographic_Text_Classification.ipynb: Main Jupyter notebook containing code, explanations, and results.
-data/: Directory for storing sample data files.
-src/: Directory containing Python scripts for modular code.
-preprocessing.py: Contains functions for text preprocessing.
-classifier.py: Contains the classifier and related functions.
-requirements.txt: Lists all dependencies needed for the project.
+**What I did**
+- Downloaded Wikipedia summaries for 10 topics: 5 geographic (New York, Mount Everest, Sahara Desert, Amazon River, Paris) and 5 non-geographic (Quantum Mechanics, Artificial Intelligence, Shakespeare, Modern Art, Jazz Music).
+- Pre-processed the text with NLTK: tokenisation, part-of-speech tagging, stop-word removal, lemmatisation, keeping only nouns.
+- Found the 10 most frequent nouns for each class (geographic: *river, city, desert, region…*; non-geographic: *theory, art, system, intelligence…*) and used these 20 words as features (word counts).
+- Trained a logistic regression model and compared it with a majority-class baseline.
+- Wrote a function that reads a PDF with PyPDF2 and classifies its text.
 
-Setup Instructions
-Clone the repository:
-bash
-Copy code
-git clone https://github.com/Amirhatamian/The-Classification-of-Texts-using-Wikipedia.ipynb.git
-cd The-Classification-of-Texts-using-Wikipedia.ipynb
-Install dependencies:
-bash
-Copy code
-pip install -r requirements.txt
-Run the Jupyter notebook:
-bash
-Copy code
-## jupyter notebook notebooks/The-Classification-of-Texts-using-Wikipedia.ipynb.ipynb
+**Result and limits:** this is a working prototype of the full pipeline. With only 9 documents downloaded, the test set has 2 documents, so the 50% test accuracy says little about the method. The next step is to train on a few hundred Wikipedia pages per class.
 
-### Solution Steps
+## 2. Hierarchical summarisation for a language model's context window — `LLM.ipynb`
 
-Text Extraction: Extract text from Wikipedia articles and PDF documents using PyPDF2.
-Preprocessing: Clean and preprocess text (tokenization, stopword removal, stemming/lemmatization) using NLTK.
-Feature Extraction: Convert text into numerical features using CountVectorizer.
-Model Training: Train a Naive Bayes classifier on the preprocessed text data using scikit-learn.
-Prediction: Classify new text documents using the trained model.
+**Goal:** shorten two long texts so that both fit in a language model's context window, keeping their lengths in proportion.
 
-### Example Usage
-Open the Jupyter notebook.
-Run the cells to preprocess the text, train the classifier, and classify new documents.
+**What I did**
+- Downloaded two Wikipedia articles chosen by the user and saved them as text files.
+- Calculated a target length for each text from its original length and the context window size (128 words in the example).
+- **Version 1:** cut the text into slices, shortened each slice by keeping its first and last sentences, joined the results, and repeated until the text fitted the window.
+- **Version 2:** picked sentences by similarity instead: built a sentence similarity matrix (word counts + cosine similarity), started from the first sentence and kept adding the sentence most similar to the summary so far, until the target length was reached.
+- Combined the two summaries into one prompt for the language model.
 
-# Large Language Model (LLM) Summarization
-### Project Overview
-This project involves implementing an algorithm to generate a summarization of an input text that follows the style of another text. The algorithm handles long texts by summarizing them hierarchically.
+## How to run
 
-### Technologies and Tools
+```bash
+git clone https://github.com/Amirhatamian/NLP.git
+cd NLP
+pip install nltk scikit-learn wikipedia wikipedia-api PyPDF2 jupyter
+jupyter notebook
+```
 
-Python (using NLTK) or Java (using OpenNLP): Programming languages and respective libraries used for implementation.
-LLM: Large Language Model for handling the context window and summarization tasks.
+Both notebooks download their data from Wikipedia, so they need an internet connection.
 
-### Summarization Pipeline
+## Tools
 
-Measure the length of the two documents.
-
-Compute target lengths proportional to the lengths of the documents.
-
-Slice the second document within the context window.
-
-Summarize the slice without specifying a target size.
-
-Repeat slicing and summarizing until the end of the document.
-
-Collate the summaries.
-
-Repeat the process until the summary is within the context window.
-
-Save the document.
-
-Repeat summarization for the second document.
-
-Generate the final query.
-
-### Implementation Details
-Length Measurement: Determine the lengths of the documents.
-
-Target Length Calculation: Compute target lengths based on document proportions.
-
-Document Slicing: Slice the second document to fit within the context window.
-
-Hierarchical Summarization: Summarize each slice and collate the results.
-
-Summary Collation: Combine all summaries into a cohesive document.
-
-Query Generation: Create the final summarized document.
-
-### Example Usage
-Implement the summarization algorithm in Python or Java.
-Run the algorithm with the provided input texts.
-Generate the summarized output following the style of the input text.
+Python, NLTK, scikit-learn, PyPDF2, Wikipedia API
